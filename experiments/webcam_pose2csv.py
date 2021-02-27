@@ -57,7 +57,7 @@ if __name__ == '__main__':
     # pose情報のcsv保存用の設定
     dir_here =  os.path.dirname(os.path.abspath(__file__))
     # base_dir = '/home/kubotalab-hsr/Desktop/webcamera_pose_data' 
-    base_dir = dir_here + '/webcamera_pose_data/' 
+    base_dir = dir_here + '/data/' 
     dt_now = datetime.datetime.now()
     new_dir_path = str(dt_now)[0:16].replace(' ', '-').replace(':', '-')
     save_dir = base_dir + new_dir_path

@@ -1,7 +1,7 @@
 import sys
 import cv2
 # dir_name = str(input('enter directory name : '))
-images_path = 'webcamera_pose_data/' + '2021-02-27-22-13/'
+images_path = 'data/' + '2021-02-27-22-13/'
 fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
 video = cv2.VideoWriter(images_path+'/pose.mp4',fourcc, 20.0, (640, 480))
 
