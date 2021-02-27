@@ -1,14 +1,16 @@
 import base64
 import os
 
-import cv2
+# import cv2
 from functools import lru_cache
 
 from tf_pose import common
 from tf_pose import eval
 from tf_pose.estimator import TfPoseEstimator
 from tf_pose.networks import get_graph_path, model_wh
-
+# import sys
+# sys.path.remove('/opt/ros/melodic/lib/python2.7/dist-packages')
+import cv2
 Estimator = TfPoseEstimator
 
 

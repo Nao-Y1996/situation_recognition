@@ -1,6 +1,13 @@
 from enum import Enum
 
 import tensorflow as tf
+
+# rosのcv2との競合を避けるための処理
+import sys
+remove_path = '/opt/ros/melodic/lib/python2.7/dist-packages'
+if remove_path in sys.path:
+    sys.path.remove(remove_path)
+
 import cv2
 
 
