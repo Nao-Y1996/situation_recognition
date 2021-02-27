@@ -1,3 +1,7 @@
+# added by Nao
+webcamera_pose_data/
+webcam_pose2csv/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
