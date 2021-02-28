@@ -14,16 +14,17 @@ def create(images_path, movie_path):
     i = 0
     while True:
         try:
-            image_path = glob.glob(images_path+"/"+str(i)+"*")[0]
+            image_path = glob.glob(images_path+"/"+str(i)+".png")[0]
             # print(image_path)
             img = cv2.imread(image_path)
+            cv2.putText(img,"frame:"+str(i),(400, 440),  cv2.FONT_HERSHEY_SIMPLEX, 0.5,(0, 255, 0), 2)
             # print(images_path+"/"+str(i)+"*")
 
             if img is None:
                 print("can't read")
                 break
             video.write(img)
-            if i % 100 == 0:
+            if i % 500 == 0:
                 print('image: -- %d' % i)
             i += 1
         except:

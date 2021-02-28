@@ -68,7 +68,7 @@ if __name__ == '__main__':
     new_dir_path = str(dt_now)[0:16].replace(' ', '-').replace(':', '-')
     save_dir = base_dir + new_dir_path
     os.makedirs(save_dir+'/images/')
-    pose_par_second_path = save_dir + '/index_par_second.csv'
+    pose_par_second_path = save_dir + '/index_per_second.csv'
     f = open(pose_par_second_path, 'w')
     f.close
     pose_path = save_dir + '/pose.csv'
@@ -103,9 +103,10 @@ if __name__ == '__main__':
                     try:
                         part = human.body_parts[part_index]
                         pose_data.extend(
-                            [int(part.x*camera_w), int(part.y*camera_h), round(part.score, 4)])
+                            # [int(part.x*camera_w), int(part.y*camera_h), round(part.score, 4)])
+                            [round(part.x, 4), round(part.y,4), round(part.score, 4)])
                     except:
-                        pose_data.extend([0, 0, 0.0])
+                        pose_data.extend([0.0, 0.0, 0.0])
                 all_pose_data.extend(pose_data)
             # 毎フレームposeを記録する
             with open(pose_path, 'a') as csvfile:
@@ -126,7 +127,7 @@ if __name__ == '__main__':
             elasped_time = 0
 
         cv2.imwrite(save_dir + '/images/' + str(frame_num) + '.png', image)
-        # cv2.putText(image,"frame: : %f" % frame,(10, 10),  cv2.FONT_HERSHEY_SIMPLEX, 0.5,(0, 255, 0), 2)
+        # cv2.putText(image,"frame: : %f" % frame,(5, 5),  cv2.FONT_HERSHEY_SIMPLEX, 0.5,(0, 255, 0), 2)
 
         # フレームの表示
         cv2.imshow('tf-pose-estimation result', image)
