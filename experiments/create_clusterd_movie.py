@@ -32,8 +32,8 @@ if __name__ == '__main__':
     clusterd_images_path = args.dir+'/clusterd_images/'
 
     # 分類結果を描画した画像の保存先の作成
-    if not os.path.exists(clusterd_images_path):
-        os.makedirs(clusterd_images_path)
+    # if not os.path.exists(clusterd_images_path):
+    #     os.makedirs(clusterd_images_path)
 
     # 分類結果の読み込み
     with open(correct_data_path) as f:
@@ -75,6 +75,7 @@ if __name__ == '__main__':
             i += 1
         except:
             break
+    video.release()
 
 
         
